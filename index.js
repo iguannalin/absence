@@ -5,20 +5,31 @@ window.addEventListener("load", () => {
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
   const container = document.getElementById("container");
-
-  // if (container.dataset.info) moveElements();
-  // else createElement(true);
+  let infos = [];
+  let interval;
+  let index = 0;
+  fetch("absence.json").then((r)=>r.json()).then((d)=>
+  {
+    infos=Array.from(d);
+    console.log({infos});
+    document.addEventListener('click', start, {passive: false});
+  });
 
   function start(e) {
     e.preventDefault();
-
-    const text = `<!DOCTYPE html><html> <head> <title>absence</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://iguannalin.github.io/absence/index.css"/></head> <body><div id="overlay"></div> <div id="container" data-info=${btoa(info)}></div></body></html>`;
-    const blob = new Blob([text], {type: "text/html"});
-    const blobUrl = URL.createObjectURL(blob);
-    window.open(blobUrl, '_blank', `popup,width=${getRandomInt(200,500)},height=${getRandomInt(100,400)}`);
-    window.URL.revokeObjectURL(blobUrl);
+    interval = setInterval(() => createWindow(), 1500);
   }
 
-  // setTimeout(start, 500);
-  document.addEventListener('touchstart', start, {passive: false});
+  function createWindow() {
+    let sq = getRandomInt(150,500);
+    const info = infos[index];
+    const text = `<!DOCTYPE html><html> <head> <title>absence</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://iguannalin.github.io/absence/index.css"/></head> <body><div id="overlay"></div> <div id="container" data-info=${btoa(info)}></div></body><script>let container = document.getElementById('container'); if (container.dataset.info) container.innerHTML = atob(container.dataset.info);</script></html>`;
+    const blob = new Blob([text], {type: "text/html"});
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank', `popup,width=${sq},height=${sq},left=${getRandomInt(200,500)},top=${getRandomInt(100,400)}`);
+    window.URL.revokeObjectURL(blobUrl);
+    index++;
+    if (index == 3)//infos.length) 
+      clearInterval(interval);
+  }
 });
