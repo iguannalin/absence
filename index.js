@@ -11,25 +11,25 @@ window.addEventListener("load", () => {
   fetch("absence.json").then((r)=>r.json()).then((d)=>
   {
     infos=Array.from(d);
-    console.log({infos});
     document.addEventListener('click', start, {passive: false});
   });
 
   function start(e) {
     e.preventDefault();
-    interval = setInterval(() => createWindow(), 1500);
+    interval = setInterval(createWindow, 2500);
   }
 
   function createWindow() {
-    let sq = getRandomInt(150,500);
+    let sq = getRandomInt(200,500);
     const info = infos[index];
     const text = `<!DOCTYPE html><html> <head> <title>absence</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://iguannalin.github.io/absence/index.css"/></head> <body><div id="overlay"></div> <div id="container" data-info=${btoa(info)}></div></body><script>let container = document.getElementById('container'); if (container.dataset.info) container.innerHTML = atob(container.dataset.info);</script></html>`;
     const blob = new Blob([text], {type: "text/html"});
     const blobUrl = URL.createObjectURL(blob);
-    window.open(blobUrl, '_blank', `popup,width=${sq},height=${sq},left=${getRandomInt(200,500)},top=${getRandomInt(100,400)}`);
+    window.open(blobUrl, '_blank', `popup,width=${sq},height=${sq},left=${getRandomInt(300,900)},top=${getRandomInt(100,500)}`);
     window.URL.revokeObjectURL(blobUrl);
     index++;
-    if (index == 3)//infos.length) 
+    console.log({index, infos});
+    if (index >= infos.length) 
       clearInterval(interval);
   }
 });
