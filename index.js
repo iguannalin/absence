@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 
   function start(e) {
     e.preventDefault();
-    interval = setInterval(createWindow, 2500);
+    interval = setInterval(createWindow, 5000);
   }
 
   function createWindow() {
