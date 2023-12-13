@@ -1,25 +1,23 @@
-[quote]
 technology has been around for a long time
-[tech pics]
+
 when did it become problematic?
 when we went from low-tech to high-tech, bc in going high-tech we became further disembodied, further removed from our physical self and physical reality
-[matrix pics]
+
 [GUI]
 specifically, this paper will focus on GUIs or graphical user interfaces
 as one of the first "portals" to this virtual, alternative reality
 i will discuss how it has transformed from a well-intentioned “graphical user interface” to a smooth design “anesthetic aesthetic” which we have no agency over as consumers
-[gui pics]
 
 to go over some definitions
 what i mean by virtual reality means outside of my physical body
 not all GUIs are bad, in this paper i am specifically looking at GUI of consumer tech rather than commercial tech
-[medical device pics]
 
 in talking about tech and user agency
 i feel that it's necessary to talk about the history of GUIs
 and how it arrived to what it is today is shaped by our current consumerist capitalist society
 i will discuss current critiques of the dark patterns of user interfaces
 and i want to talk about the consumers as precariats
+
 [Precariat]
 amalgamation of the words precarious and proletariat
 meaning a person living with instability and insecurity in society
@@ -33,6 +31,7 @@ and instead to be fully present
 [Kracauer]
 i want to discuss the critiques of how the standardization of our attention and time is tied to slavery and colonialism with jenny odell's writings on the topic
 i want to talk about artists who chose to stay in the present and who saw beauty in repair, in things people labelled trash
-[Noah purifoy]
+[Noah Purifoy]
 i want to discuss authors interested in topics of repair and maintenance
 namely donna j haraway and the importance she places on speculative fiction for reimagining the future
+[Haraway]
